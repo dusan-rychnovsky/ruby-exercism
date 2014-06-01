@@ -12,11 +12,6 @@ class Prime
   end
   
   def self.prime?(number, lower_primes)
-    lower_primes.each do |i|
-      return false if number % i == 0
-    end
-    return true
+    lower_primes.none? { |p| number % p == 0 }
   end
 end
-
-puts Prime.nth(1)
